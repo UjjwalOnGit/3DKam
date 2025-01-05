@@ -1,182 +1,185 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
 
-:root {
-  --main-colour: #111317;
-  --main-colour-light: #1f2125;
-  --main-colour-extra-light: #35373b;
-  --secondary-color: #f9ac54;
-  --secondary-color-dark: #d79447;
-  --text: #d1d5db;
-  --white: #ffffff;
-  --max-width: 100vw;
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #1B1B1B;
+    color: #eef8ce;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-image:
+    url(img/bg.png),
+    repeating-linear-gradient(
+        to right, transparent 0 500px, #73814B33 500px 501px
+    );
+    background-size: 100%;
+}
+*::-webkit-scrollbar {
+    width: 0;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  user-select: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+.section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.section__header {
-  margin-bottom: 1rem;
-  font-size: 2.25rem;
-  font-weight: 600;
-  text-align: center;
-  color: var(--white);
+.content-fit {
+    width: min(1200px, 90vw);
+    margin: auto;
+    min-height: 100vh;
+    position: relative;
+    padding-block: 10em;
+}
+header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10px;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(
+        to right, transparent 0 500px, #eee1 500px 501px
+    );
+}
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset!important;
+    padding-block: unset!important;
+}
+header .content-fit nav ul{
+    display: flex;
+    gap: 2em;
 }
 
-.btn {
-  padding: 1rem 2rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  color: var(--white);
-  background-color: var(--secondary-color);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+#banner .title {
+    color: #d1ff48;
+    font-size: 11em;
+    font-family: "devil breeze";
+    font-weight: bold;
+    position: relative;
+    text-align: center;
 }
-
-.btn:hover {
-  background-color: var(--secondary-color-dark);
+#banner .title::before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0.5em;
+    inset: 0.66em 0 0 0;
+    z-index: -1;
+    color: #445022;
 }
-
-img {
-  width: 100%;
-  display: flex;
+.section .decorate {
+    position: absolute;
 }
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: var(--main-colour);
-  padding-left: 10vw;
-  padding-right: 10vw;
-
+#intro .content-fit {
+    display: flex;
+    gap: 30%;
+    justify-content: space-between;
+    align-items: center;
 }
-
-nav {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 2rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
 }
-
-.nav__logo {
-  max-width: 120px;
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
 }
-
-.nav__links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
+#description .content-fit {
+    padding-right: 30%;
 }
-
-.link a {
-  position: relative;
-  padding-bottom: 0.75rem;
-  color: var(--white);
+#description .number {
+    font-size: 5em;
 }
-
-.link a::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0;
-  left: 0;
-  bottom: 0;
-  background-color: var(--secondary-color);
-  transition: 0.3s;
+#description .title {
+    font-size: 7em;
+    font-weight: 500;
 }
-
-.link a:hover::after {
-  width: 50%;
+#contact .content-fit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
-
-.header__container {
-  position: relative;
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 2rem;
+#contact table {
+    width: min(800px, 90vw);
+    padding-top: 2em;
+    font-size: 2em;
+    margin: auto;
 }
-
-
-
-.header__content h4 {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--secondary-color);
+#contact table td {
+    padding-block: 0.5em;
+    border-bottom: 1px dashed #445022;
 }
-
-.header__content h1 {
-  margin-bottom: 1rem;
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 6rem;
-  color: var(--white);
+#contact table td:nth-child(1) {
+    text-align: left;
+    font-weight: 500;
 }
-
-
-.header__content p {
-  margin-bottom: 2rem;
-  color: var(--text);
+#contact table td:nth-child(2) {
+    text-align: right;
+    font-weight: 200;
 }
-
-
-.class__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+#contact .sign {
+    font-family: 'Bimbo', sans-serif;
+    font-size: 10em;
 }
-
-
-.class__content {
-  padding: 2rem 0;
+#container3D {
+    position: fixed;
+    inset: 0;
+    /* background-color: red; */
+    z-index: 100;
+    pointer-events: none;
 }
-
-
-.class__content p {
-  margin-bottom: 4rem;
-  color: var(--text);
+@media screen and (max-width: 1023px){
+    #banner .title {
+        font-size: 5em;
+    }
+    #intro .content-fit {
+        flex-direction: column;
+    }
 }
-
-.review {
-  background-color: var(--main-colour-light);
-  padding-left: 10vw;
-}
-
-.review__content h4 {
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--white);
-}
-
-.review__content p {
-  max-width: 800px;
-  margin-bottom: 2rem;
-  color: var(--text);
-}
-
-.review__member {
-  gap: 100px;
-}
-
-.review__member img {
-  max-width: 60px;
-}
-
-#container3D{
-  position: absolute;
-  inset: 0;
-  /* background-color: red; */
-  z-index: 100;
-  pointer-events: none;
+@media screen and (max-width: 767px){
+    #banner .title {
+        font-size: 3em;
+    }
+    #intro .content-fit {
+        flex-direction: column;
+    }
+    .section .number {
+        font-size: 5em;
+    }
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+    #description .content-fit {
+        padding-right: 0;
+    }
+    #contact table {
+        font-size: 1em;
+    }
+    #contact .sign {
+        font-size: 2em;
+    }
+    #container3D {
+        position: absolute;
+    }
 }
